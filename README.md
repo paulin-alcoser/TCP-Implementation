@@ -1,4 +1,4 @@
-# Project 1: Transmission Control Protocol
+# Transmission Control Protocol
 
 
 ### 1. Project Objectives
