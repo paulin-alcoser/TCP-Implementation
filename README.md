@@ -63,7 +63,7 @@ By using ACKs to pace the transmission of packets, TCP is said to be “self-clo
 
 **Congestion Avoidance** slowly increases CWND until a packet loss occurs. The increase of CWND should be at most one packet per round-trip time (regardless how many ACKs are received in that RTT). That is, when the sender receives an ACK, it usually increases CWND by a fraction equal to 1/CWND. You may notice here that you need to use a float variable for the CWND, however when you send data you are always going to take the floor of the CWND. As soon as the entire window is acknowledged, only then these fractions would sum to a 1.0 and as a result the CWND would then have increased by 1. This is in contrast to Slow-start where CWND is incremented for each ACK. Recall that when the sender receives 3 duplicate ACK packets, you should assume that the packet with sequence number == acknowledgment number was lost, even if a timeout has not occurred yet. This process is called Fast Retransmit.
 
-**Fast Retransmit:** After a Fast Retransmit, the ssthresh is set to max(CWND/2, 2). CWND is then set to 1 and the Slow-start process starts again. There is NO need to implement the fast recovery mechanism.
+**Fast Retransmit:** After a Fast Retransmit, the ssthresh is set to max(CWND/2,2). CWND is then set to 1 and the Slow-start process starts again. There is NO need to implement the fast recovery mechanism.
 
 #### 3.3 Graphing CWND 
 
